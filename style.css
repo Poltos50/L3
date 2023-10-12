@@ -50,6 +50,21 @@ body {
   flex-wrap: nowrap;
   align-items: center;
 }
+.top__foto2 {
+  position: relative;
+  
+}
+.top__foto2::before {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  content: "•";
+  color: #7EB942;
+  z-index: 2;
+  right: 40px;
+  bottom: 50px;
+  font-size: 35px;
+}
 .info-photo {
   width: 150px;
   height: 150px;
@@ -389,6 +404,18 @@ body {
   cursor: pointer;
   border-radius: 50%;
 }
+
+.triangle {
+  position: absolute;
+  bottom: -10px; /* Расположение треугольника снизу */
+  left: 50%;
+  transform: translateX(-50%); /* Позиционирование в центре */
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #fff; /* Цвет треугольника и его размер */
+}
 .menu__anchor {
   display: flex;
   justify-content: center;
@@ -400,12 +427,14 @@ body {
 .a__anchor {
   width: 40px;
   height: 40px;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   background-color: #F0F0F6;
 }
+
 .a__anchor:hover {
   background-color: #FFB400;
   transition-delay: 0.2s;
@@ -415,7 +444,35 @@ body {
   fill: #2B2B2B;
   transition-delay: 0.2s;
 }
+.tooltip {
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+  padding: 8px;
+  top: -65px; /* Располагаем подсказку выше ссылки */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in;
+}
 
+.a__anchor:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.a__anchor .tooltip::before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #333; /* Цвет треугольника и его размер */
+}
 
 /* Block 2 */
 
